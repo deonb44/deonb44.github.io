@@ -1,12 +1,86 @@
-* {
- background-color: hsl(240, 37%, 12%); 
- color: white;
+
+/*custom properties(kind of like creating variables for different styles*/
+/*changing how padding is calculated */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-h1, h2, h3, li{
- color: white;
- font-family: Helvetica, Arial, sans-serif;
- 
+/* ff= font family, fw- font weight, clr- color, fs=font size*/
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-seconday: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-dark: hsl(240, 37%, 12%);
+    --clr-light: white;
+    --clr-accent: purple;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/*general styles*/
+body {
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
+/*Typography*/
+
+h1,h2,h3 {
+    line-height: 1.1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle-projects {
+    background: var(--clr-accent);
+    font-family: var(--ff-seconday);
 }
 
 p {
@@ -20,12 +94,15 @@ p {
 
 .skillSection {
     text-align: center;
+    width: 300px;
+    margin: auto;
+    
 }
 
 .skillsList{
     text-align: center;
     line-height: 23px;
-    display: inline-block;
+    
     width: 200px;
     
 }
@@ -36,10 +113,10 @@ p {
 
 .learning {
     text-align: center;
-    display: inline-block;
-    width: 250px;
     
-    background-color: aliceblue;
+    width: 250px;
+    height: 200px;
+
 }
 
 .learning p {
