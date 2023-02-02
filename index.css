@@ -1,11 +1,47 @@
 * {
- background-color: black; 
+ background-color: hsl(240, 37%, 12%); 
+ color: white;
 }
 
-h1 {
+h1, h2, h3, li{
  color: white;
+ font-family: Helvetica, Arial, sans-serif;
+ 
 }
 
 p {
  color: white;
+}
+
+.intro {
+    text-align: center;
+    margin: 100px;
+}
+
+.skillSection {
+    text-align: center;
+}
+
+.skillsList{
+    text-align: center;
+    line-height: 23px;
+    display: inline-block;
+    width: 200px;
+    
+}
+
+.skillsList p {
+    font-size: large;
+}
+
+.learning {
+    text-align: center;
+    display: inline-block;
+    width: 250px;
+    
+    background-color: aliceblue;
+}
+
+.learning p {
+    font-size: large;
 }
