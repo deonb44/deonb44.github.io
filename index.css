@@ -17,12 +17,14 @@
 
     --clr-dark: hsl(240, 37%, 12%);
     --clr-light: white;
-    --clr-accent: purple;
+    --clr-accent: rgb(63, 9, 63);
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+/*bs is the box shadow variable*/
+    --bs: 0.25e, 0.25em 0.75em rgba(0,0,0,0.25), 0.125em 00.125em 0.25em rgba(0,0,0,0.15);
 }
 
 @media (min-width: 800px) {
@@ -44,19 +46,47 @@ body {
     line-height: 1.6;
 }
 
+/*the padding below is to help on smaller screens so the content isn't touching the sides*/
+section {
+    padding: 5em 2em;
+}
+
 img{
     display: block;
     max-width: 100%;
 }
 
-strong {
+strong { font-weight: var(--fw-bold);}
+
+/* the focus is triggered when the user scrolls by the button */
+:focus {
+    outline: 30px solid green;
+    outline-offset: 13px;
+}
+
+/* button */
+.btn {
+    display: inline-block;
+    padding: .5em 1.5em;
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
 }
 
 /*Typography*/
 
 h1,h2,h3 {
-    line-height: 1.1;
+    line-height: 1;
     margin: 0;
 }
 
@@ -72,53 +102,107 @@ h3 { font-size: var(--fs-h3) }
     font-weight: var(--fw-reg);
 }
 
+.section__title--intro strong {
+    display: block;
+}
+
 .section__subtitle {
     margin: 0;
     font-size: var(--fs-h3);
 }
 
-.section__subtitle--intro,
-.section__subtitle-projects {
+.section__subtitle--intro {
     background: var(--clr-accent);
+    padding: .25em 1em;
     font-family: var(--ff-seconday);
+    margin-bottom: 1em;
 }
 
-p {
- color: white;
-}
+nav { display: none;}
+
+/* Intro section */
 
 .intro {
-    text-align: center;
-    margin: 100px;
+    position: relative;
 }
+
+.profile-pic {
+    box-shadow: var(--bs);
+}
+/*the block below adjust the size of the purple bar on smaller screens*/
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: "img title"
+        "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+    .profile-pic {
+        grid-area: img;
+        min-width: 250px;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        /*grid column stretches the purple bar*/
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        font-size: larger;
+        
+        left: -1em;
+        width: calc(100% + 1.5em)
+    }
+}
+
+/* Skills Section */
 
 .skillSection {
-    text-align: center;
-    width: 300px;
-    margin: auto;
-    
+  /*  background-color: var(--clr-accent); */
+   /* background-image: url(..); */
+   background-size: cover;
+   text-align: center;
 }
 
-.skillsList{
-    text-align: center;
-    line-height: 23px;
-    
-    width: 200px;
-    
+.section__title--skills {
+    position: relative;
 }
 
-.skillsList p {
-    font-size: large;
+.section__title--skills::after {
+    content: '';
+    display: block;
+    width: 10%;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light)
 }
 
-.learning {
-    text-align: center;
+.skillList {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+    .skills {
+        display: flex;
+        max-width: 50%;
+        margin: 0 auto;
+        
+    }
+}
+
+.skillList + .skillList {
+    margin-left: 2em;
     
-    width: 250px;
-    height: 200px;
 
-}
-
-.learning p {
-    font-size: large;
 }
