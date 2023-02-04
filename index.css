@@ -15,9 +15,9 @@
     --fw-reg: 300;
     --fw-bold: 900;
 
-    --clr-dark: hsl(240, 37%, 12%);
+    --clr-dark: hsl(218, 23%, 9%);
     --clr-light: white;
-    --clr-accent: rgb(63, 9, 63);
+    --clr-accent: rgb(80, 47, 180);
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -96,6 +96,7 @@ h3 { font-size: var(--fs-h3) }
 
 .section__title {
     margin-bottom: .25em;
+    min-width: 100px;
 }
 
 .section__title--intro {
@@ -113,6 +114,7 @@ h3 { font-size: var(--fs-h3) }
 
 .section__subtitle--intro {
     background: var(--clr-accent);
+    border-radius: 10px;
     padding: .25em 1em;
     font-family: var(--ff-seconday);
     margin-bottom: 1em;
@@ -146,29 +148,28 @@ nav { display: none;}
     }
     .profile-pic {
         grid-area: img;
-        min-width: 250px;
-        border-radius: 50%;
+        max-width: 200px;
         position: relative;
         z-index: 1;
     }
 
     .section__subtitle--intro {
-        align-self: start;
+        align-self: flex-end;
         /*grid column stretches the purple bar*/
-        grid-column: -1 / 1;
+        grid-column: 0 / 0;
         grid-row: 2;
         text-align: right;
         font-size: larger;
-        
+    
         left: -1em;
-        width: calc(100% + 1.5em)
+        /* width: calc(100% + 1.5em) */
     }
 }
 
 /* Skills Section */
 
 .skillSection {
-  /*  background-color: var(--clr-accent); */
+   background-color: var(--clr-accent);
    /* background-image: url(..); */
    background-size: cover;
    text-align: center;
@@ -184,12 +185,22 @@ nav { display: none;}
     width: 10%;
     height: 1px;
     margin: 0.5em auto 1em;
-    background: var(--clr-light)
+    background: var(--clr-accent)
 }
 
 .skillList {
     max-width: 500px;
     margin: 0 auto;
+}
+
+.skillList h3 {
+    font-size: xx-large;
+    /* content: '';
+    height: 12%;
+    max-width: 120%;
+    
+    border-radius: 10px;;
+    background: var(--clr-accent) */
 }
 
 @media (min-width: 800px) {
@@ -199,10 +210,4 @@ nav { display: none;}
         margin: 0 auto;
         
     }
-}
-
-.skillList + .skillList {
-    margin-left: 2em;
-    
-
 }
