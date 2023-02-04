@@ -67,7 +67,7 @@ strong { font-weight: var(--fw-bold);}
 /* button */
 .btn {
     display: inline-block;
-    padding: .5em 1.5em;
+    padding: .5em 2.5em;
     background: var(--clr-light);
     color: var(--clr-dark);
     text-decoration: none;
@@ -77,6 +77,7 @@ strong { font-weight: var(--fw-bold);}
     letter-spacing: 2px;
     font-weight: var(--fw-bold);
     transition: transform 200ms ease-in-out;
+    border-radius: 10px;;
 }
 
 .btn:hover {
@@ -101,6 +102,7 @@ h3 { font-size: var(--fs-h3) }
 
 .section__title--intro {
     font-weight: var(--fw-reg);
+    margin-left: 25px;
 }
 
 .section__title--intro strong {
@@ -119,6 +121,13 @@ h3 { font-size: var(--fs-h3) }
     font-family: var(--ff-seconday);
     margin-bottom: 1em;
 }
+/* css for my work subtitle section */
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
 
 nav { display: none;}
 
@@ -182,10 +191,14 @@ nav { display: none;}
 .section__title--skills::after {
     content: '';
     display: block;
-    width: 10%;
+    width: 17%;
     height: 1px;
     margin: 0.5em auto 1em;
-    background: var(--clr-accent)
+    background: var(--clr-light)
+}
+
+.skills {
+    margin-bottom: 4em;
 }
 
 .skillList {
@@ -207,7 +220,94 @@ nav { display: none;}
     .skills {
         display: flex;
         max-width: 50%;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
         
     }
+}
+
+/* About Me */
+
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+                "title img"
+                "subtitle img"
+                "text img";
+                grid-column-gap: 2em;
+    }
+
+    .section__title--about {
+        grid-area: title;
+    }
+    .about-me__img {
+        grid-area: img;
+        border-radius: 10px;
+    }
+}
+
+/* Projects */
+.my-work {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    text-align: center;
+}
+
+.portfolio {
+    display: grid;
+    /* minmax() means 300px is the minimum size the column will go but can increase if need be */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+    width: 100%;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #111;
+    color: var(--clr-light);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+.footer a { 
+    color: inherit;
+    text-decoration: none;}
+
+.footer__link {
+    
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover, .social-list__link:hover {
+    opacity: .7;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 .5em;
 }
