@@ -37,6 +37,12 @@
 }
 
 /*general styles*/
+/* the scroll behavior allows a smooth transition when clicking a link in the nav */
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     background: var(--clr-dark);
     color: var(--clr-light);
@@ -200,7 +206,19 @@ Header {
     position: fixed;
 }
 
+/* causing the hamburger to rotate when opening the nav */
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
 
+/* this gives the appearance of an x */
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
 
 .hamburger {
     display: block;
@@ -303,12 +321,7 @@ Header {
 
 .skillList h3 {
     font-size: xx-large;
-    /* content: '';
-    height: 12%;
-    max-width: 120%;
     
-    border-radius: 10px;;
-    background: var(--clr-accent) */
 }
 
 @media (min-width: 800px) {
@@ -320,6 +333,12 @@ Header {
         
     }
 }
+
+
+
+
+
+
 
 /* About Me */
 
@@ -359,13 +378,23 @@ Header {
 }
 
 .portfolio {
-    display: grid;
+    display: inline-flex;
+    background-size: cover;
     /* minmax() means 300px is the minimum size the column will go but can increase if need be */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
     background-color: var(--clr-accent);
     color: var(--clr-light);
     width: 100%;
+   
 }
+
+.portfolio__img1 {
+    height: 420px;
+    width: 650px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 
 
 /* Footer */
