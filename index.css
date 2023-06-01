@@ -377,6 +377,12 @@ Header {
     text-align: center;
 }
 
+.section__subtitle--work {
+    background-color: yellow;
+    color: Black;
+    background-size: cover;
+}
+
 .portfolio {
     display: inline-flex;
     background-size: cover;
