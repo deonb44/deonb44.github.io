@@ -371,7 +371,9 @@ Header {
     background-color: var(--clr-light);
     color: var(--clr-dark);
     text-align: center;
-    height: 15em;
+    /* height: 10em;
+     */
+    
 }
 
 /* .section__subtitle--work {
