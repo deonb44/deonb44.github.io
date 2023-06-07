@@ -336,10 +336,6 @@ Header {
 
 
 
-
-
-
-
 /* About Me */
 
 .about-me {
@@ -375,33 +371,45 @@ Header {
     background-color: var(--clr-light);
     color: var(--clr-dark);
     text-align: center;
+    height: 15em;
 }
 
-.section__subtitle--work {
+/* .section__subtitle--work {
     background-color: yellow;
     color: Black;
     background-size: cover;
-}
+} */
 
 .portfolio {
-    display: inline-flex;
+    display: flex;
+    padding: 5em;
+    margin-left: auto;
+    margin-right: auto;
     background-size: cover;
+    flex-wrap: wrap;
     /* minmax() means 300px is the minimum size the column will go but can increase if need be */
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* grid-template-columns: repeat(auto-fit, minmax(auto-fill, min-max(300px, 300px))); */
     background-color: var(--clr-accent);
     color: var(--clr-light);
-    width: 100%;
-   
 }
 
-.portfolio__img1 {
-    height: 420px;
-    width: 650px;
-    margin-left: 0;
-    margin-right: 0;
+.portfolio1, .portfolio2, .portfolio3 {
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    max-width: 400px;
 }
 
+.portfolio img {
+    width: 400px;
+    height: 300px;
+    border-radius: 8px;
+}
 
+.portfolio__p {
+    word-wrap: break-word;
+}
 
 /* Footer */
 
@@ -443,4 +451,9 @@ Header {
     background: var(--clr-dark);
     color: var(--clr-light);
 
+}
+
+.social-media__img {
+    height: 40px;
+    width: 40px;
 }
